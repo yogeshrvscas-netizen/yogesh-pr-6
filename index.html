@@ -1,14 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ordered and Unordered List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Column Features</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+
+            /* CSS3 Column Features */
+            column-count: 3;
+            column-gap: 30px;
+            column-rule: 2px solid #555;
+        }
+
+        h2 {
+            color: #cc5500;
+
+            /* Prevent heading from breaking between columns */
+            break-inside: avoid;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            column-span: all;
+            text-align: center;
+            color: darkgreen;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
-/* Write your HTML code to a page with ordered list and unordered list */
+    <h1>CSS3 Column Features</h1>
+
+    <div class="content">
+
+        <h2 class="highlight">Introduction to CSS3</h2>
+
+        <h2>Column Count</h2>
+        <p>
+            CSS3 provides column features that allow text to be displayed
+            in multiple columns, similar to a newspaper or magazine.
+            The column-count property specifies the number of columns
+            into which the content should be divided.
+        </p>
+
+        <h2>Column Gap</h2>
+        <p>
+            The column-gap property controls the amount of space between
+            columns. It makes the content easier to read and provides
+            visual separation between the different columns.
+        </p>
+
+        <h2>Column Rule</h2>
+        <p>
+            The column-rule property adds a line between columns.
+            It can be customized by changing its width, style, and color.
+            This helps distinguish one column from another.
+        </p>
+
+        <h2>Column Width</h2>
+        <p>
+            The column-width property can be used to specify the preferred
+            width of each column. The browser automatically determines the
+            number of columns that can fit in the available space.
+        </p>
+
+        <h2>Column Span</h2>
+        <p>
+            The column-span property allows an element to span across
+            multiple columns. Using column-span: all makes an element
+            extend across all available columns.
+        </p>
+
+    </div>
 
 </body>
 </html>
