@@ -1,0 +1,51 @@
+name: HTML Lists Autograding
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  autograding:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install
+
+      - name: Test 1 - Main Heading
+        run: npx jest -t "Main heading exists"
+
+      - name: Test 2 - Ordered List
+        run: npx jest -t "Ordered list exists"
+
+      - name: Test 3 - Ordered List Items
+        run: npx jest -t "Ordered list contains five items"
+
+      - name: Test 4 - Python
+        run: npx jest -t "Contains Python"
+
+      - name: Test 5 - JavaScript in Ordered List
+        run: npx jest -t "Contains JavaScript in ordered list"
+
+      - name: Test 6 - Unordered List
+        run: npx jest -t "Unordered list exists"
+
+      - name: Test 7 - Unordered List Items
+        run: npx jest -t "Unordered list contains five items"
+
+      - name: Test 8 - HTML
+        run: npx jest -t "Contains HTML"
+
+      - name: Test 9 - React
+        run: npx jest -t "Contains React"
+
+      - name: Test 10 - Two H2 Headings
+        run: npx jest -t "Two h2 headings exist"
